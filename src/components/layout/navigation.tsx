@@ -52,7 +52,7 @@ const Header = () => {
   return (
     <HStack flex="1" ps="4">
       <Box>
-        {isDesktop && (
+        {/* {isDesktop && (
           <SearchInput
             placeholder="Search docs..."
             size="sm"
@@ -67,7 +67,7 @@ const Header = () => {
           onSelect={(value) => {
             console.log(value)
           }}
-        />
+        /> */}
       </Box>
       <HStack spacing="2" flexShrink={0} flex="1" justifyContent="flex-end">
         {headerNav.map(({ href, id, ...props }, i) => {
@@ -85,7 +85,7 @@ const Header = () => {
           )
         })}
 
-        <Tooltip label="Feedback &amp; Roadmap">
+        {/* <Tooltip label="Feedback &amp; Roadmap">
           <IconButton
             variant="ghost"
             aria-label="roadmap"
@@ -94,9 +94,9 @@ const Header = () => {
             as={Link}
             href="https://roadmap.saas-ui.dev"
           />
-        </Tooltip>
+        </Tooltip> */}
 
-        <Tooltip label="Discord community">
+        {/* <Tooltip label="Discord community">
           <IconButton
             variant="ghost"
             aria-label="discord"
@@ -127,7 +127,7 @@ const Header = () => {
             as={Link}
             href="https://github.com/saas-js/saas-ui"
           />
-        </Tooltip>
+        </Tooltip> */}
 
         <ThemeToggle />
 
