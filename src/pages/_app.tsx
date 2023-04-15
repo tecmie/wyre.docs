@@ -1,5 +1,5 @@
 import { AppProps } from 'next/app'
-import Script from 'next/script'
+// import Script from 'next/script'
 import Layout from '@/components/layout'
 
 import theme from '../styles/theme'
@@ -27,7 +27,7 @@ const MyApp = ({ Component, pageProps }: AppProps<any>) => {
             header={pageProps.header}
             footer={pageProps.footer !== false ? <Footer /> : null}
           >
-            <Script
+            {/* <Script
               id="pirschjs"
               strategy="afterInteractive"
               src="https://api.pirsch.io/pirsch.js"
@@ -45,7 +45,7 @@ const MyApp = ({ Component, pageProps }: AppProps<any>) => {
               dangerouslySetInnerHTML={{
                 __html: `window.$crisp=[];window.CRISP_WEBSITE_ID="65e4ab93-1a03-40da-ae73-7a327854e2f7";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();`,
               }}
-            />
+            /> */}
             <NProgressNextRouter router={router} />
             <Component {...pageProps} />
           </Layout>

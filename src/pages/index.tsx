@@ -15,10 +15,10 @@ import {
   Button,
   ButtonGroup,
   useColorModeValue,
-  chakra,
+  // chakra,
   Avatar,
   VisuallyHidden,
-  Img,
+  // Img,
   Grid,
   GridItem,
   useDisclosure,
@@ -32,19 +32,19 @@ import {
   useTheme,
   Tag,
   Wrap,
-  WrapItem,
+  // WrapItem,
   Icon,
   Center,
-  Tooltip,
+  // Tooltip,
   AspectRatio,
   Badge,
-  DarkMode,
+  // DarkMode,
   Card,
 } from '@chakra-ui/react'
 
 import Hero from '@/components/marketing/hero'
 import Features from '@/components/marketing/features'
-import CTA from '@/components/marketing/cta'
+// import CTA from '@/components/marketing/cta'
 import Section from '@/components/marketing/section-wrapper'
 
 import RedwoodJS from '/public/frameworks/redwood.svg'
@@ -52,7 +52,7 @@ import NextJS from '/public/frameworks/nextjs.svg'
 import Blitz from '/public/frameworks/blitz.svg'
 import Supabase from '/public/frameworks/supabase.svg'
 
-import { SignupForm } from '@/components/signup-form'
+// import { SignupForm } from '@/components/signup-form'
 import { Em, Br } from '@/components/typography'
 
 import { FallInPlace } from '@/components/motion/fall-in-place'
@@ -81,9 +81,9 @@ import {
   FiTrendingUp,
   FiArrowRight,
   FiUserPlus,
-  FiChevronRight,
+  // FiChevronRight,
 } from 'react-icons/fi'
-import { FaGithub } from 'react-icons/fa'
+// import { FaGithub } from 'react-icons/fa'
 import { FormDialog } from '@saas-ui/modals'
 import { Field } from '@saas-ui/forms'
 import {
@@ -96,7 +96,9 @@ import {
 } from '@saas-ui/core'
 
 import { transparentize } from '@chakra-ui/theme-tools'
-import { Testimonial, Testimonials } from '@/components/testimonials'
+import { Testimonial, 
+  // Testimonials 
+} from '@/components/testimonials'
 
 import { BackgroundGradientRadial } from '@/components/background-gradient-radial'
 import { Polypane } from '@/components/logos/customers/polypane'
@@ -107,13 +109,13 @@ import { Farmo } from '@/components/logos/customers/farmo'
 import { Ownco } from '@/components/logos/customers/ownco'
 
 const CodePanel = dynamic(() => import('@/components/code-panel/code-panel'))
-const ComponentShowcase = dynamic(() =>
-  import('@/components/component-showcase').then((mod) => mod.ComponentShowcase)
-)
+// const ComponentShowcase = dynamic(() =>
+//   import('@/components/component-showcase').then((mod) => mod.ComponentShowcase)
+// )
 
 const Home = () => {
   const [animateGlow, setAnimate] = React.useState()
-  const isDesktop = useBreakpointValue({ lg: true })
+  // const isDesktop = useBreakpointValue({ lg: true })
   return (
     <Box>
       <SEO
@@ -240,30 +242,32 @@ const Home = () => {
           <UsedBy />
         </Box>
 
-        {isDesktop && <ComponentShowcase />}
+        {/* {isDesktop && <ComponentShowcase />} */}
 
         <Box id="features">
           <Benefits />
 
           <BoilerplateCode />
 
-          <Themable />
+          {/* <Themable /> */}
 
           <Highlights />
         </Box>
 
-        <Founder />
+        {/* <Founder /> */}
 
-        <Testimonials />
+        {/* <Testimonials /> */}
 
-        <DarkMode>
+        <Screenshots />
+
+        {/* <DarkMode>
           <Box bg="black" color="white" overflow="hidden" position="relative">
             <BackgroundGradientRadial opacity="0.6" top="-50%" />
             <ProFeatures />
 
             <Screenshots />
           </Box>
-        </DarkMode>
+        </DarkMode> */}
       </Box>
     </Box>
   )
@@ -416,66 +420,66 @@ const Screenshots = () => {
   )
 }
 
-const Founder = () => {
-  return (
-    <Section
-      innerWidth={['100%', null, 'container.xl']}
-      position="relative"
-      overflow="hidden"
-    >
-      <Box position="relative">
-        <Heading
-          fontWeight="bold"
-          fontSize={['2xl', null, '4xl']}
-          lineHeight="lg"
-          color={useColorModeValue('black', 'white')}
-          width={{ base: 'full', lg: '50%' }}
-          mb="8"
-        >
-          Building SaaS products requires you to be a generalist on many fronts.
-          However many developers aren&apos;t very design savvy and vice versa.
-        </Heading>
+// const Founder = () => {
+//   return (
+//     <Section
+//       innerWidth={['100%', null, 'container.xl']}
+//       position="relative"
+//       overflow="hidden"
+//     >
+//       <Box position="relative">
+//         <Heading
+//           fontWeight="bold"
+//           fontSize={['2xl', null, '4xl']}
+//           lineHeight="lg"
+//           color={useColorModeValue('black', 'white')}
+//           width={{ base: 'full', lg: '50%' }}
+//           mb="8"
+//         >
+//           Building SaaS products requires you to be a generalist on many fronts.
+//           However many developers aren&apos;t very design savvy and vice versa.
+//         </Heading>
 
-        <Stack
-          fontSize="lg"
-          spacing="16"
-          alignItems="flex-start"
-          color="muted"
-          direction={{ base: 'column', lg: 'row' }}
-        >
-          <VStack spacing="8" alignItems="flex-start">
-            <Text fontSize={['xl', null, '2xl']}>
-              Saas UI tries to fill this gap by giving developers an extensive
-              set of beautifully crafted components built on{' '}
-              <Em>best in class tools</Em>. While on the same time serve as a{' '}
-              <Em>great foundation</Em> for designers to create their brand.
-            </Text>
-          </VStack>
-          <VStack spacing="8" alignItems="flex-start">
-            <Text fontSize={['xl', null, '2xl']}>
-              With Saas UI you&apos;ll <Em>save hundreds of hours</Em> building
-              essential functionality for your product. Time that you can use to
-              validate new ideas, find your perfect product market fit and build
-              functionality that makes your product unique.
-            </Text>
-            <Stack direction="row" align="center">
-              <Avatar
-                src="/eelco128.jpg"
-                mr="2"
-                size="md"
-                name="Eelco Wiersma"
-              />
-              <VStack align="flex-start" spacing="0">
-                <Em>Eelco Wiersma</Em>
-                <Text fontSize="sm">Founder Saas UI</Text>
-              </VStack>
-            </Stack>
-          </VStack>
-        </Stack>
-      </Box>
-    </Section>
-  )
-}
+//         <Stack
+//           fontSize="lg"
+//           spacing="16"
+//           alignItems="flex-start"
+//           color="muted"
+//           direction={{ base: 'column', lg: 'row' }}
+//         >
+//           <VStack spacing="8" alignItems="flex-start">
+//             <Text fontSize={['xl', null, '2xl']}>
+//               Saas UI tries to fill this gap by giving developers an extensive
+//               set of beautifully crafted components built on{' '}
+//               <Em>best in class tools</Em>. While on the same time serve as a{' '}
+//               <Em>great foundation</Em> for designers to create their brand.
+//             </Text>
+//           </VStack>
+//           <VStack spacing="8" alignItems="flex-start">
+//             <Text fontSize={['xl', null, '2xl']}>
+//               With Saas UI you&apos;ll <Em>save hundreds of hours</Em> building
+//               essential functionality for your product. Time that you can use to
+//               validate new ideas, find your perfect product market fit and build
+//               functionality that makes your product unique.
+//             </Text>
+//             <Stack direction="row" align="center">
+//               <Avatar
+//                 src="/eelco128.jpg"
+//                 mr="2"
+//                 size="md"
+//                 name="Eelco Wiersma"
+//               />
+//               <VStack align="flex-start" spacing="0">
+//                 <Em>Eelco Wiersma</Em>
+//                 <Text fontSize="sm">Founder Saas UI</Text>
+//               </VStack>
+//             </Stack>
+//           </VStack>
+//         </Stack>
+//       </Box>
+//     </Section>
+//   )
+// }
 
 const BoilerplateCode = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -565,123 +569,123 @@ const BoilerplateCode = () => {
   )
 }
 
-const Themable = () => {
-  return (
-    <Section innerWidth="container.xl">
-      <Box py="10" flex="1" width={['full', null, null, '50%']}>
-        <Heading size="2xl" mb="8" fontWeight="extrabold">
-          Make it yours.
-        </Heading>
-        <VStack spacing="4" alignItems="flex-start">
-          <Text fontSize={['xl', null, '2xl']} color="muted">
-            Saas UI is built on top of <Em>Chakra UI</Em>, all components are
-            built with the same excellent design principles. Effortlessly
-            compose and customize components directly through CSS-in-JS style
-            props or by creating a custom theme.
-          </Text>
-        </VStack>
-      </Box>
-      <Stack spacing="12" direction={{ base: 'column', xl: 'row' }}>
-        <Box
-          display="flex"
-          flex="1"
-          alignItems="center"
-          justifyContent="center"
-          borderRadius="2xl"
-          position="relative"
-          bg="codeBackground"
-          _dark={{
-            bg: 'transparent',
-            bgGradient: 'linear(to-b, codeBackground, transparent)',
-          }}
-          _before={{
-            content: '""',
-            display: 'block',
-            pointerEvents: 'none',
-            userSelect: 'none',
-            position: 'absolute',
-            inset: '0px',
-            borderRadius: 'inherit',
-            padding: '1px',
-            bgGradient: `linear(to-b, whiteAlpha.300, transparent)`,
+// const Themable = () => {
+//   return (
+//     <Section innerWidth="container.xl">
+//       <Box py="10" flex="1" width={['full', null, null, '50%']}>
+//         <Heading size="2xl" mb="8" fontWeight="extrabold">
+//           Make it yours.
+//         </Heading>
+//         <VStack spacing="4" alignItems="flex-start">
+//           <Text fontSize={['xl', null, '2xl']} color="muted">
+//             Saas UI is built on top of <Em>Chakra UI</Em>, all components are
+//             built with the same excellent design principles. Effortlessly
+//             compose and customize components directly through CSS-in-JS style
+//             props or by creating a custom theme.
+//           </Text>
+//         </VStack>
+//       </Box>
+//       <Stack spacing="12" direction={{ base: 'column', xl: 'row' }}>
+//         <Box
+//           display="flex"
+//           flex="1"
+//           alignItems="center"
+//           justifyContent="center"
+//           borderRadius="2xl"
+//           position="relative"
+//           bg="codeBackground"
+//           _dark={{
+//             bg: 'transparent',
+//             bgGradient: 'linear(to-b, codeBackground, transparent)',
+//           }}
+//           _before={{
+//             content: '""',
+//             display: 'block',
+//             pointerEvents: 'none',
+//             userSelect: 'none',
+//             position: 'absolute',
+//             inset: '0px',
+//             borderRadius: 'inherit',
+//             padding: '1px',
+//             bgGradient: `linear(to-b, whiteAlpha.300, transparent)`,
 
-            WebkitMask:
-              'linear-gradient(black, black) content-box content-box, linear-gradient(black, black)',
-            WebkitMaskComposite: 'xor',
-          }}
-        >
-          <Tabs width="100%" colorScheme="white">
-            <TabList borderColor="whiteAlpha.200" color="white">
-              <Tab>Style props</Tab>
-              <Tab>Theme</Tab>
-            </TabList>
-            <TabPanels>
-              <TabPanel>
-                <CodePanel language="typescript" height="280px">
-                  {codeExamples.styleProps}
-                </CodePanel>
-              </TabPanel>
-              <TabPanel>
-                <CodePanel language="typescript" height="280px">
-                  {codeExamples.theme}
-                </CodePanel>
-              </TabPanel>
-            </TabPanels>
-          </Tabs>
-        </Box>
-        <Box
-          display="flex"
-          flex="1"
-          p={[0, null, 10]}
-          alignItems="center"
-          justifyContent="center"
-          borderRadius="2xl"
-        >
-          <Banner
-            display="flex"
-            bg={useColorModeValue('white', 'gray.900')}
-            colorScheme="purple"
-            backgroundClip="padding-box"
-            borderRadius="full"
-            borderWidth="2px"
-            borderColor="transparent"
-            position="relative"
-            py="2"
-            px="3"
-            overflow="visible"
-            transitionProperty="common"
-            transitionDuration="normal"
-            boxShadow="lg"
-            _before={{
-              content: `""`,
-              position: 'absolute',
-              zIndex: -1,
-              top: 0,
-              right: 0,
-              bottom: 0,
-              left: 0,
-              borderRadius: 'inherit',
-              margin: '-2px',
-              bgGradient: 'linear(to-r, purple.500, cyan.500)',
-            }}
-            _hover={{
-              boxShadow: 'sm',
-            }}
-          >
-            <BannerIcon boxSize="14px" />
-            <BannerContent fontSize="sm">
-              <BannerTitle>Pre-order Saas UI Pro now!</BannerTitle>
-              <BannerDescription display={{ base: 'none', md: 'block' }}>
-                50% discount for early adopters.
-              </BannerDescription>
-            </BannerContent>
-            <BannerCloseButton position="absolute" top="2" right="4" />
-          </Banner>
-        </Box>
-      </Stack>
-    </Section>
-  )
-}
+//             WebkitMask:
+//               'linear-gradient(black, black) content-box content-box, linear-gradient(black, black)',
+//             WebkitMaskComposite: 'xor',
+//           }}
+//         >
+//           <Tabs width="100%" colorScheme="white">
+//             <TabList borderColor="whiteAlpha.200" color="white">
+//               <Tab>Style props</Tab>
+//               <Tab>Theme</Tab>
+//             </TabList>
+//             <TabPanels>
+//               <TabPanel>
+//                 <CodePanel language="typescript" height="280px">
+//                   {codeExamples.styleProps}
+//                 </CodePanel>
+//               </TabPanel>
+//               <TabPanel>
+//                 <CodePanel language="typescript" height="280px">
+//                   {codeExamples.theme}
+//                 </CodePanel>
+//               </TabPanel>
+//             </TabPanels>
+//           </Tabs>
+//         </Box>
+//         <Box
+//           display="flex"
+//           flex="1"
+//           p={[0, null, 10]}
+//           alignItems="center"
+//           justifyContent="center"
+//           borderRadius="2xl"
+//         >
+//           <Banner
+//             display="flex"
+//             bg={useColorModeValue('white', 'gray.900')}
+//             colorScheme="purple"
+//             backgroundClip="padding-box"
+//             borderRadius="full"
+//             borderWidth="2px"
+//             borderColor="transparent"
+//             position="relative"
+//             py="2"
+//             px="3"
+//             overflow="visible"
+//             transitionProperty="common"
+//             transitionDuration="normal"
+//             boxShadow="lg"
+//             _before={{
+//               content: `""`,
+//               position: 'absolute',
+//               zIndex: -1,
+//               top: 0,
+//               right: 0,
+//               bottom: 0,
+//               left: 0,
+//               borderRadius: 'inherit',
+//               margin: '-2px',
+//               bgGradient: 'linear(to-r, purple.500, cyan.500)',
+//             }}
+//             _hover={{
+//               boxShadow: 'sm',
+//             }}
+//           >
+//             <BannerIcon boxSize="14px" />
+//             <BannerContent fontSize="sm">
+//               <BannerTitle>Pre-order Saas UI Pro now!</BannerTitle>
+//               <BannerDescription display={{ base: 'none', md: 'block' }}>
+//                 50% discount for early adopters.
+//               </BannerDescription>
+//             </BannerContent>
+//             <BannerCloseButton position="absolute" top="2" right="4" />
+//           </Banner>
+//         </Box>
+//       </Stack>
+//     </Section>
+//   )
+// }
 
 const HighlightBox = (props) => {
   const { children, ...rest } = props
@@ -1130,155 +1134,155 @@ export const CreateProject = (props) => {
 }`,
 }
 
-const ProFeatures = () => {
-  return (
-    <Features
-      id="pro-features"
-      position="relative"
-      zIndex="1"
-      bg="transparent"
-      title={
-        <Stack alignItems="flex-start">
-          <Badge
-            colorScheme="primary"
-            variant="outline"
-            border="1px"
-            rounded="full"
-            px="2"
-            fontWeight="medium"
-            textTransform="inherit"
-            fontSize="md"
-          >
-            Pro license
-          </Badge>
-          <Heading
-            lineHeight="short"
-            fontSize={['2xl', null, '4xl']}
-            textAlign="left"
-            as="p"
-            color="inherit"
-          >
-            Not your standard
-            <Br /> dashboard template.
-          </Heading>
-        </Stack>
-      }
-      description={
-        <Stack alignItems="flex-start" spacing="8">
-          <Text fontSize={['xl', null, 'xl']}>
-            Saas UI Pro includes everything you need to build frontends that
-            scale.
-            <Br />
-            Use it as a template for your next product or foundation for your
-            design system.
-          </Text>
-          <ButtonGroup>
-            <ButtonLink href="/pricing" size="lg" variant="primary">
-              Early access
-            </ButtonLink>
-            <ButtonLink
-              size="lg"
-              href="https://demo.saas-ui.dev"
-              target="_blank"
-              variant="outline"
-              _hover={{
-                bg: 'whiteAlpha.200',
-              }}
-              rightIcon={
-                <Icon
-                  as={FiArrowRight}
-                  sx={{
-                    transitionProperty: 'common',
-                    transitionDuration: 'normal',
-                    '.chakra-button:hover &': {
-                      transform: 'translate(5px)',
-                    },
-                  }}
-                />
-              }
-            >
-              Explore Demo
-            </ButtonLink>
-          </ButtonGroup>
-        </Stack>
-      }
-      align="left"
-      variant="alternate"
-      columns={[1, 2, 3]}
-      iconSize={4}
-      features={[
-        {
-          title: 'Components.',
-          icon: FiBox,
-          description:
-            'All premium components are available on a private NPM registery, no more copy pasting and always up-to-date.',
-          variant: 'inline',
-        },
-        {
-          title: 'Starterkits.',
-          icon: FiLock,
-          description:
-            'Example apps in Next.JS, Electron. Including authentication, billing, example pages, everything you need to get started FAST.',
-          variant: 'inline',
-        },
-        {
-          title: 'Documentation.',
-          icon: FiSearch,
-          description:
-            'Extensively documented, including storybooks, best practices, use-cases and examples.',
-          variant: 'inline',
-        },
-        {
-          title: 'Onboarding.',
-          icon: FiUserPlus,
-          description:
-            'Add user onboarding flows, like tours, hints and inline documentation without breaking a sweat.',
-          variant: 'inline',
-        },
-        {
-          title: 'Feature flags.',
-          icon: FiFlag,
-          description:
-            "Implement feature toggles for your billing plans with easy to use hooks. Connect Flagsmith, or other remote config services once you're ready.",
-          variant: 'inline',
-        },
-        {
-          title: 'Upselling.',
-          icon: FiTrendingUp,
-          description:
-            'Components and hooks for upgrade flows designed to make upgrading inside your app frictionless.',
-          variant: 'inline',
-        },
-        {
-          title: 'Themes.',
-          icon: FiToggleLeft,
-          description:
-            'Includes multiple themes with darkmode support, always have the perfect starting point for your next project.',
-          variant: 'inline',
-        },
-        {
-          title: 'Generators.',
-          icon: FiTerminal,
-          description:
-            'Extend your design system while maintaininig code quality and consistency with build-in generators.',
-          variant: 'inline',
-        },
-        {
-          title: 'Monorepo.',
-          icon: FiCode,
-          description: (
-            <>
-              All code is available as packages in a high-performance{' '}
-              <Link href="https://turborepo.com">Turborepo</Link>, you have full
-              control to modify and adjust it to your workflow.
-            </>
-          ),
-          variant: 'inline',
-        },
-      ]}
-    />
-  )
-}
+// const ProFeatures = () => {
+//   return (
+//     <Features
+//       id="pro-features"
+//       position="relative"
+//       zIndex="1"
+//       bg="transparent"
+//       title={
+//         <Stack alignItems="flex-start">
+//           <Badge
+//             colorScheme="primary"
+//             variant="outline"
+//             border="1px"
+//             rounded="full"
+//             px="2"
+//             fontWeight="medium"
+//             textTransform="inherit"
+//             fontSize="md"
+//           >
+//             Pro license
+//           </Badge>
+//           <Heading
+//             lineHeight="short"
+//             fontSize={['2xl', null, '4xl']}
+//             textAlign="left"
+//             as="p"
+//             color="inherit"
+//           >
+//             Not your standard
+//             <Br /> dashboard template.
+//           </Heading>
+//         </Stack>
+//       }
+//       description={
+//         <Stack alignItems="flex-start" spacing="8">
+//           <Text fontSize={['xl', null, 'xl']}>
+//             Saas UI Pro includes everything you need to build frontends that
+//             scale.
+//             <Br />
+//             Use it as a template for your next product or foundation for your
+//             design system.
+//           </Text>
+//           <ButtonGroup>
+//             <ButtonLink href="/pricing" size="lg" variant="primary">
+//               Early access
+//             </ButtonLink>
+//             <ButtonLink
+//               size="lg"
+//               href="https://demo.saas-ui.dev"
+//               target="_blank"
+//               variant="outline"
+//               _hover={{
+//                 bg: 'whiteAlpha.200',
+//               }}
+//               rightIcon={
+//                 <Icon
+//                   as={FiArrowRight}
+//                   sx={{
+//                     transitionProperty: 'common',
+//                     transitionDuration: 'normal',
+//                     '.chakra-button:hover &': {
+//                       transform: 'translate(5px)',
+//                     },
+//                   }}
+//                 />
+//               }
+//             >
+//               Explore Demo
+//             </ButtonLink>
+//           </ButtonGroup>
+//         </Stack>
+//       }
+//       align="left"
+//       variant="alternate"
+//       columns={[1, 2, 3]}
+//       iconSize={4}
+//       features={[
+//         {
+//           title: 'Components.',
+//           icon: FiBox,
+//           description:
+//             'All premium components are available on a private NPM registery, no more copy pasting and always up-to-date.',
+//           variant: 'inline',
+//         },
+//         {
+//           title: 'Starterkits.',
+//           icon: FiLock,
+//           description:
+//             'Example apps in Next.JS, Electron. Including authentication, billing, example pages, everything you need to get started FAST.',
+//           variant: 'inline',
+//         },
+//         {
+//           title: 'Documentation.',
+//           icon: FiSearch,
+//           description:
+//             'Extensively documented, including storybooks, best practices, use-cases and examples.',
+//           variant: 'inline',
+//         },
+//         {
+//           title: 'Onboarding.',
+//           icon: FiUserPlus,
+//           description:
+//             'Add user onboarding flows, like tours, hints and inline documentation without breaking a sweat.',
+//           variant: 'inline',
+//         },
+//         {
+//           title: 'Feature flags.',
+//           icon: FiFlag,
+//           description:
+//             "Implement feature toggles for your billing plans with easy to use hooks. Connect Flagsmith, or other remote config services once you're ready.",
+//           variant: 'inline',
+//         },
+//         {
+//           title: 'Upselling.',
+//           icon: FiTrendingUp,
+//           description:
+//             'Components and hooks for upgrade flows designed to make upgrading inside your app frictionless.',
+//           variant: 'inline',
+//         },
+//         {
+//           title: 'Themes.',
+//           icon: FiToggleLeft,
+//           description:
+//             'Includes multiple themes with darkmode support, always have the perfect starting point for your next project.',
+//           variant: 'inline',
+//         },
+//         {
+//           title: 'Generators.',
+//           icon: FiTerminal,
+//           description:
+//             'Extend your design system while maintaininig code quality and consistency with build-in generators.',
+//           variant: 'inline',
+//         },
+//         {
+//           title: 'Monorepo.',
+//           icon: FiCode,
+//           description: (
+//             <>
+//               All code is available as packages in a high-performance{' '}
+//               <Link href="https://turborepo.com">Turborepo</Link>, you have full
+//               control to modify and adjust it to your workflow.
+//             </>
+//           ),
+//           variant: 'inline',
+//         },
+//       ]}
+//     />
+//   )
+// }
 
 export default Home
 
