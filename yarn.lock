@@ -2239,11 +2239,6 @@
   resolved "https://registry.yarnpkg.com/@fontsource/epilogue/-/epilogue-4.5.11.tgz#4579b2dc431125f4391619c3600d88fa9273aa8e"
   integrity sha512-2L54zvaeYRxBK0yKCjEVcp37sBeDKkDJ2NgaX6+TGMJP1CcsMIz7K1xc3fpqqRFQV/4r0XY/RaiY6vbjHLF/5g==
 
-"@fontsource/inter@^4.5.15":
-  version "4.5.15"
-  resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-4.5.15.tgz#eed1873d68755d3b52d6fcfcfa3493118430a512"
-  integrity sha512-FzleM9AxZQK2nqsTDtBiY0PMEVWvnKnuu2i09+p6DHvrHsuucoV2j0tmw+kAT3L4hvsLdAIDv6MdGehsPIdT+Q==
-
 "@grpc/grpc-js@^1.5.9":
   version "1.8.14"
   resolved "https://registry.yarnpkg.com/@grpc/grpc-js/-/grpc-js-1.8.14.tgz#4fe0f9917d6f094cf59245763c275442b182e9ad"

@@ -25,7 +25,7 @@ import { ButtonLink } from '@/components/link'
 
 import { Faq } from '@/components/faq'
 
-import { Testimonials } from '@/components/testimonials'
+// import { Testimonials } from '@/components/testimonials'
 
 import { BackgroundGradientRadial } from '@/components/background-gradient-radial'
 import { Br } from '@saas-ui/react'
@@ -63,7 +63,7 @@ const PricingPage = () => {
 
         <Faq />
 
-        <Testimonials />
+        {/* <Testimonials /> */}
       </Box>
     </Box>
   )
@@ -110,6 +110,10 @@ const Pricing = () => {
         />
 
         <SimpleGrid columns={[1, null, 2, 4]} spacing={4}>
+          
+          {/* empty vstack to maintain layout temporarily */}
+          <VStack/>
+
           <PricingBox
             title="Open Source"
             description="Basic components, perfect to get started."
@@ -129,109 +133,7 @@ const Pricing = () => {
               View documentation
             </ButtonLink>
           </PricingBox>
-          <PricingBox
-            title="Bootstrap"
-            price={
-              <HStack>
-                <Text
-                  textDecoration="line-through"
-                  fontSize="sm"
-                  color="gray.400"
-                >
-                  €199,-
-                </Text>
-                <Text>€149,-</Text>
-              </HStack>
-            }
-            description="Complete frontend stack for bootstrappers and small teams."
-            highlight="primary.500"
-          >
-            <PricingFeatures>
-              <PricingFeature
-                title="One developer"
-                help="One developer per license, you can buy as many licenses as you need. Licenses can be transfered."
-              />
-              <PricingFeature
-                title={<>Unlimited projects*</>}
-                help="You can build and fail as many self hosted SaaS products as you like. Maximum 1 client project per license."
-              />
-              <PricingFeature title="Advanced components" />
-              <PricingFeature title="Multiple themes" />
-              <PricingFeature title="Next.js and Electron boilerplates" />
-              <PricingFeature title="Private discord community" />
-              <PricingFeature title="1 year of updates" />
-              <br />
-              <PricingFeature
-                title="Private beta access"
-                iconColor="green.500"
-              />
-            </PricingFeatures>
-            <ButtonLink
-              as="a"
-              colorScheme="primary"
-              href={paymentLinks.bootstrap}
-              className={paymentLinks.className}
-              onClick={(e) => {
-                setTimeout(() => {
-                  /* @ts-ignore */
-                  window?.pirsch?.('Order Bootstrap')
-                })
-              }}
-            >
-              Early access
-            </ButtonLink>
-          </PricingBox>
-          <PricingBox
-            title="Startup"
-            price={
-              <HStack>
-                <Text
-                  textDecoration="line-through"
-                  fontSize="sm"
-                  color="gray.400"
-                >
-                  €999,-
-                </Text>
-                <Text>€499,-</Text>
-              </HStack>
-            }
-            description="Unlimited license for growing teams or agencies."
-          >
-            <PricingFeatures>
-              <PricingFeature
-                title="Up to 20 developers"
-                help="A developer can be either an employee or a contracted freelancer."
-              />
-              <PricingFeature
-                title="Unlimited projects"
-                help="No restrictions on commercial projects or client work."
-              />
-              <PricingFeature title="Everything from Bootstrap" />
-              <PricingFeature title="Prioritized feature requests" />
-              <PricingFeature title="Priority support" />
-              <PricingFeature title="Introduction call" />
-              <PricingFeature title="1 year of updates" />
-              <br />
-              <PricingFeature
-                title="Private beta access"
-                iconColor="green.500"
-              />
-            </PricingFeatures>
-            <ButtonLink
-              as="a"
-              colorScheme="primary"
-              href={paymentLinks.startup}
-              className={paymentLinks.className}
-              onClick={(e) => {
-                setTimeout(() => {
-                  /* @ts-ignore */
-                  window?.pirsch?.('Order Startup')
-                })
-              }}
-            >
-              Early access
-            </ButtonLink>
-          </PricingBox>
+          
           <MemberShip />
         </SimpleGrid>
 
@@ -435,3 +337,110 @@ export async function getStaticProps() {
     },
   }
 }
+
+
+// boostrap and startup pricing box taken from flow
+
+{/* <PricingBox */}
+  //   title="Bootstrap"
+  //   price={
+  //     <HStack>
+  //       <Text
+  //         textDecoration="line-through"
+  //         fontSize="sm"
+  //         color="gray.400"
+  //       >
+  //         €199,-
+  //       </Text>
+  //       <Text>€149,-</Text>
+  //     </HStack>
+  //   }
+  //   description="Complete frontend stack for bootstrappers and small teams."
+  //   highlight="primary.500"
+  // >
+  //   <PricingFeatures>
+  //     <PricingFeature
+  //       title="One developer"
+  //       help="One developer per license, you can buy as many licenses as you need. Licenses can be transfered."
+  //     />
+  //     <PricingFeature
+  //       title={<>Unlimited projects*</>}
+  //       help="You can build and fail as many self hosted SaaS products as you like. Maximum 1 client project per license."
+  //     />
+  //     <PricingFeature title="Advanced components" />
+  //     <PricingFeature title="Multiple themes" />
+  //     <PricingFeature title="Next.js and Electron boilerplates" />
+  //     <PricingFeature title="Private discord community" />
+  //     <PricingFeature title="1 year of updates" />
+  //     <br />
+  //     <PricingFeature
+  //       title="Private beta access"
+  //       iconColor="green.500"
+  //     />
+  //   </PricingFeatures>
+  //   <ButtonLink
+  //     as="a"
+  //     colorScheme="primary"
+  //     href={paymentLinks.bootstrap}
+  //     className={paymentLinks.className}
+  //     onClick={(e) => {
+  //       setTimeout(() => {
+  //         /* @ts-ignore */
+  //         window?.pirsch?.('Order Bootstrap')
+  //       })
+  //     }}
+  //   >
+  //     Early access
+  //   </ButtonLink>
+  // </PricingBox>
+  // <PricingBox
+  //   title="Startup"
+  //   price={
+  //     <HStack>
+  //       <Text
+  //         textDecoration="line-through"
+  //         fontSize="sm"
+  //         color="gray.400"
+  //       >
+  //         €999,-
+  //       </Text>
+  //       <Text>€499,-</Text>
+  //     </HStack>
+  //   }
+  //   description="Unlimited license for growing teams or agencies."
+  // >
+  //   <PricingFeatures>
+  //     <PricingFeature
+  //       title="Up to 20 developers"
+  //       help="A developer can be either an employee or a contracted freelancer."
+  //     />
+  //     <PricingFeature
+  //       title="Unlimited projects"
+  //       help="No restrictions on commercial projects or client work."
+  //     />
+  //     <PricingFeature title="Everything from Bootstrap" />
+  //     <PricingFeature title="Prioritized feature requests" />
+  //     <PricingFeature title="Priority support" />
+  //     <PricingFeature title="Introduction call" />
+  //     <PricingFeature title="1 year of updates" />
+  //     <br />
+  //     <PricingFeature
+  //       title="Private beta access"
+  //       iconColor="green.500"
+  //     />
+  //   </PricingFeatures>
+  //   <ButtonLink
+  //     as="a"
+  //     colorScheme="primary"
+  //     href={paymentLinks.startup}
+  //     className={paymentLinks.className}
+  //     onClick={(e) => {
+  //       setTimeout(() => {
+  //         /* @ts-ignore */
+  //         window?.pirsch?.('Order Startup')
+  //       })
+  //     }}
+  //   >
+  //     Early access
+  //   </ButtonLink>
+  // </PricingBox>
