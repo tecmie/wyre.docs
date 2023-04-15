@@ -135,7 +135,7 @@ export const SecondaryNav = (props) => {
         <Container maxW="container.2xl" px="6" py="1">
           <Stack spacing="2" direction="row" {...props}>
             {isMobile ? (
-              <ul>
+              <Menu>
                 <MenuButton
                   as={Button}
                   rightIcon={<Icon as={FiChevronDown} />}
@@ -144,14 +144,14 @@ export const SecondaryNav = (props) => {
                 >
                   {activeItem?.label}
                 </MenuButton>
-                <li>
+                <MenuList>
                   {links.map((item) => (
                     <Link key={item.href} href={item.href} legacyBehavior>
                       <MenuItem>{item.label}</MenuItem>
                     </Link>
                   ))}
-                </li>
-              </ul>
+                </MenuList>
+              </Menu>
             ) : (
               <>
                 {links.map((item) => (

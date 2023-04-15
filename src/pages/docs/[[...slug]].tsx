@@ -14,7 +14,7 @@ import {
 import { uniq } from '@/docs/utils/js-utils'
 
 import generateRss from '@/utils/generate-rss'
-import ComponentDocsLayout from '@/layouts/components'
+// import ComponentDocsLayout from '@/layouts/components'
 
 const MdxPage = ({ doc }: { doc: Doc }) => {
   const Component = useMDXComponent(doc?.body.code)
@@ -31,9 +31,9 @@ export default function Page({
   const content = doc && <MdxPage doc={doc} />
   if (doc?.slug.startsWith('/docs/components')) {
     return (
-      <ComponentDocsLayout frontmatter={doc?.frontMatter} tabsData={tabsData}>
+      <>
         {content}
-      </ComponentDocsLayout>
+      </>
     )
   }
 

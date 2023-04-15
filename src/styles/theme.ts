@@ -2,7 +2,7 @@ import { extendTheme, ThemeTypings } from '@chakra-ui/react'
 
 import { theme as baseTheme } from '@saas-ui/theme'
 
-import '@fontsource/inter/variable.css'
+import '@fontsource/epilogue/variable.css'
 
 import { mode, transparentize, blacken } from '@chakra-ui/theme-tools'
 
@@ -95,8 +95,8 @@ const theme = extendTheme(
     textStyles,
     fonts: {
       ...baseTheme.fonts,
-      body: 'InterVariable, sans-serif',
-      heading: 'InterVariable, sans-serif',
+      body: 'EpilogueVariable, sans-serif',
+      heading: 'EpilogueVariable, sans-serif',
     },
     sizes: {
       ...baseTheme.sizes,

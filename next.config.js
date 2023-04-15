@@ -76,26 +76,9 @@ let config = {
       }
     )
 
-    // config.resolve = {
-    //   ...config.resolve,
-    // }
-
-    // config.module.rules.push({
-    //   test: /node_modules\/@saas-ui\/.*\.tsx?/,
-    //   use: [defaultLoaders.babel],
-    // })
-
-    // config.plugins = config.plugins.concat([
-    //   new webpack.NormalModuleReplacementPlugin(
-    //     /\@saas-ui\/([a-z0-9-\/]+)$/,
-    //     (resource) => {
-    //       if (!resource.request.match(/^@saas-ui\/(props-docs)$/)) {
-    //         resource.request = resource.request + '/src'
-    //       }
-    //     }
-    //   ),
-    // ])
-
+    config.resolve = {
+      ...config.resolve,
+    }
     return config
   },
 }

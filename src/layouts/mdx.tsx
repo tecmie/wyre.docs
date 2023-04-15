@@ -6,7 +6,6 @@ import coreSidebar from '@/data/core-sidebar'
 import componentsSidebar from '@/data/components-sidebar'
 import hooksSidebar from '@/data/hooks-sidebar'
 import proSidebar from '@/data/pro-sidebar'
-// import guidesSidebar from 'configs/guides-sidebar.json'
 import * as React from 'react'
 import {
   findRouteByPath,
