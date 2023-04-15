@@ -9,6 +9,7 @@ const webpack = require('webpack')
 let config = {
   optimizeFonts: true,
   reactStrictMode: true,
+  poweredByHeader: false,
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -75,25 +76,25 @@ let config = {
       }
     )
 
-    config.resolve = {
-      ...config.resolve,
-    }
+    // config.resolve = {
+    //   ...config.resolve,
+    // }
 
-    config.module.rules.push({
-      test: /node_modules\/@saas-ui\/.*\.tsx?/,
-      use: [defaultLoaders.babel],
-    })
+    // config.module.rules.push({
+    //   test: /node_modules\/@saas-ui\/.*\.tsx?/,
+    //   use: [defaultLoaders.babel],
+    // })
 
-    config.plugins = config.plugins.concat([
-      new webpack.NormalModuleReplacementPlugin(
-        /\@saas-ui\/([a-z0-9-\/]+)$/,
-        (resource) => {
-          if (!resource.request.match(/^@saas-ui\/(props-docs)$/)) {
-            resource.request = resource.request + '/src'
-          }
-        }
-      ),
-    ])
+    // config.plugins = config.plugins.concat([
+    //   new webpack.NormalModuleReplacementPlugin(
+    //     /\@saas-ui\/([a-z0-9-\/]+)$/,
+    //     (resource) => {
+    //       if (!resource.request.match(/^@saas-ui\/(props-docs)$/)) {
+    //         resource.request = resource.request + '/src'
+    //       }
+    //     }
+    //   ),
+    // ])
 
     return config
   },

@@ -28,14 +28,6 @@ import {
   VStack,
 } from '@chakra-ui/react'
 import {
-  Page,
-  Section,
-  Toolbar,
-  ToolbarButton,
-  Command,
-  ActiveFilter,
-} from '@saas-ui/pro'
-import {
   AppShell,
   Divider,
   FormLayout,
@@ -99,27 +91,19 @@ const componentIllustrations = {
     </AppShell>
   ),
   page: (
-    <Page
-      title="Contacts"
-      height="100%"
+    <section
+      // title="Contacts"
+      // height="100%"
       toolbar={
-        <Toolbar>
           <Button variant="primary">Add</Button>
-        </Toolbar>
       }
-    ></Page>
+    ></section>
   ),
   section: (
-    <Section title="Settings" description="Manage your settings">
-      <></>
-    </Section>
+    <h1>Settings: Manage your settings</h1>
   ),
   toolbar: (
-    <Toolbar flex="0" borderWidth="1px" rounded="md">
-      <ToolbarButton label="bold" icon={<FiBold />} />
-      <ToolbarButton label="italic" icon={<FiItalic />} />
-      <ToolbarButton label="underline" icon={<FiUnderline />} />
-    </Toolbar>
+    <div> Toolbar</div>
   ),
   hotkeys: <Code colorScheme="primary">{`useHotkeys('G then D')`}</Code>,
   stepper: (
@@ -284,7 +268,6 @@ const componentIllustrations = {
       tertiaryLabel="Out for lunch"
     />
   ),
-  command: <Command>G then D</Command>,
   datagrid: (
     <Box>
       <Table size="sm">
@@ -324,9 +307,6 @@ const componentIllustrations = {
     >
       3 items selected
     </Box>
-  ),
-  filters: (
-    <ActiveFilter id="status" label="Status" operator="is" value="Active" />
   ),
   banner: (
     <Banner width="80%" colorScheme="primary" variant="solid" rounded="md">

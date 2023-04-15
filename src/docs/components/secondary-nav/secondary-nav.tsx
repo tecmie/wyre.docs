@@ -12,7 +12,6 @@ import {
   Icon,
 } from '@chakra-ui/react'
 import { useColorModeValue } from '@chakra-ui/system'
-import { ResponsiveMenu, ResponsiveMenuList } from '@saas-ui/pro'
 import Link from 'next/link'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
@@ -136,7 +135,7 @@ export const SecondaryNav = (props) => {
         <Container maxW="container.2xl" px="6" py="1">
           <Stack spacing="2" direction="row" {...props}>
             {isMobile ? (
-              <ResponsiveMenu>
+              <ul>
                 <MenuButton
                   as={Button}
                   rightIcon={<Icon as={FiChevronDown} />}
@@ -145,14 +144,14 @@ export const SecondaryNav = (props) => {
                 >
                   {activeItem?.label}
                 </MenuButton>
-                <ResponsiveMenuList>
+                <li>
                   {links.map((item) => (
                     <Link key={item.href} href={item.href} legacyBehavior>
                       <MenuItem>{item.label}</MenuItem>
                     </Link>
                   ))}
-                </ResponsiveMenuList>
-              </ResponsiveMenu>
+                </li>
+              </ul>
             ) : (
               <>
                 {links.map((item) => (
