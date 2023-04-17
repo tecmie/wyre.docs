@@ -8,39 +8,39 @@ const hideMobile = {
 const headerNav: NavLinkProps[] = [
   { id: 'home', label: 'Home', display: 'none' },
   { id: 'features', label: 'Features', ...hideMobile },
-  {
-    href: '/themes',
-    label: (
-      <HStack justifyContent="center">
-        <Text>Themes</Text>
-        <Box lineHeight={1.4}>
-          <Badge
-            variant="solid"
-            colorScheme="primary"
-            rounded="full"
-            px="2"
-            fontWeight="medium"
-          >
-            New!
-          </Badge>
-        </Box>
-      </HStack>
-    ),
-    ...hideMobile,
-  },
+  // {
+  //   href: '/themes',
+  //   label: (
+  //     <HStack justifyContent="center">
+  //       <Text>Themes</Text>
+  //       <Box lineHeight={1.4}>
+  //         <Badge
+  //           variant="solid"
+  //           colorScheme="primary"
+  //           rounded="full"
+  //           px="2"
+  //           fontWeight="medium"
+  //         >
+  //           New!
+  //         </Badge>
+  //       </Box>
+  //     </HStack>
+  //   ),
+  //   ...hideMobile,
+  // },
   {
     href: '/pricing',
     label: 'Pricing',
     ...hideMobile,
   },
   { href: '/docs', label: 'Documentation', ...hideMobile },
-  {
-    href: '/pricing',
-    label: 'Buy Pro',
-    variant: 'solid',
-    colorScheme: 'primary',
-    fontSize: 'sm',
-  },
+  // {
+  //   href: '/pricing',
+  //   label: 'Buy Pro',
+  //   variant: 'solid',
+  //   colorScheme: 'primary',
+  //   fontSize: 'sm',
+  // },
 ]
 
 export default headerNav

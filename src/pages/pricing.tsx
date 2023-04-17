@@ -109,10 +109,7 @@ const Pricing = () => {
           py={{ base: '8', lg: '20' }}
         />
 
-        <SimpleGrid columns={[1, null, 2, 4]} spacing={4}>
-          
-          {/* empty vstack to maintain layout temporarily */}
-          <VStack/>
+        <SimpleGrid columns={[1, null, 2, 2]} spacing={4}>
 
           <PricingBox
             title="Open Source"
