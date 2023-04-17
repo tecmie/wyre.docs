@@ -1,7 +1,7 @@
 import {
   Box,
-  BoxProps,
-  Button,
+  // BoxProps,
+  // Button,
   Center,
   CenterProps,
   CloseButton,
@@ -15,17 +15,19 @@ import {
   useColorModeValue,
   useUpdateEffect,
 } from '@chakra-ui/react'
-import { AnimatePresence, motion, useElementScroll } from 'framer-motion'
+import { AnimatePresence, motion, 
+  // useElementScroll 
+} from 'framer-motion'
 import useRouteChanged from '@/hooks/use-route-changed'
-import { getRoutes } from '@/layouts/mdx'
+// import { getRoutes } from '@/layouts/mdx'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import * as React from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { RemoveScroll } from 'react-remove-scroll'
 import Logo from '@/components/layout/logo'
-import { SidebarContent } from './sidebar/sidebar'
-import { t } from '@/docs/utils/i18n'
+// import { SidebarContent } from './sidebar/sidebar'
+// import { t } from '@/docs/utils/i18n'
 
 import headerNav from '@/data/header-nav'
 
@@ -73,7 +75,7 @@ interface MobileNavContentProps {
 export function MobileNavContent(props: MobileNavContentProps) {
   const { isOpen, onClose } = props
   const closeBtnRef = React.useRef<HTMLButtonElement>()
-  const { pathname, asPath } = useRouter()
+  // const { pathname, asPath } = useRouter()
   const bgColor = useColorModeValue('whiteAlpha.900', 'blackAlpha.900')
 
   useRouteChanged(onClose)
@@ -135,7 +137,7 @@ export function MobileNavContent(props: MobileNavContentProps) {
                   pb="6"
                   pt="2"
                   shadow={shadow}
-                  templateColumns="repeat(2, 1fr)"
+                  templateColumns="repeat(1, 1fr)"
                   gap="2"
                 >
                   {headerNav.map(
@@ -154,7 +156,7 @@ export function MobileNavContent(props: MobileNavContentProps) {
                 </Grid>
               </Box>
 
-              <ScrollView
+              {/* <ScrollView
                 onScroll={(scrolled) => {
                   setShadow(scrolled ? 'md' : undefined)
                 }}
@@ -163,7 +165,7 @@ export function MobileNavContent(props: MobileNavContentProps) {
                   pathname={pathname}
                   routes={getRoutes(asPath)}
                 />
-              </ScrollView>
+              </ScrollView> */}
             </Flex>
           </motion.div>
         </RemoveScroll>
@@ -172,31 +174,31 @@ export function MobileNavContent(props: MobileNavContentProps) {
   )
 }
 
-const ScrollView = (props: BoxProps & { onScroll?: any }) => {
-  const { onScroll, ...rest } = props
-  const [y, setY] = React.useState(0)
-  const elRef = React.useRef<any>()
-  const { scrollY } = useElementScroll(elRef)
-  React.useEffect(() => {
-    return scrollY.onChange(() => setY(scrollY.get()))
-  }, [scrollY])
+// const ScrollView = (props: BoxProps & { onScroll?: any }) => {
+//   const { onScroll, ...rest } = props
+//   const [y, setY] = React.useState(0)
+//   const elRef = React.useRef<any>()
+//   const { scrollY } = useElementScroll(elRef)
+//   React.useEffect(() => {
+//     return scrollY.onChange(() => setY(scrollY.get()))
+//   }, [scrollY])
 
-  useUpdateEffect(() => {
-    onScroll?.(y > 5 ? true : false)
-  }, [y])
+//   useUpdateEffect(() => {
+//     onScroll?.(y > 5 ? true : false)
+//   }, [y])
 
-  return (
-    <Box
-      ref={elRef}
-      flex="1"
-      id="routes"
-      overflow="auto"
-      px="6"
-      pb="6"
-      {...rest}
-    />
-  )
-}
+//   return (
+//     <Box
+//       ref={elRef}
+//       flex="1"
+//       id="routes"
+//       overflow="auto"
+//       px="6"
+//       pb="6"
+//       {...rest}
+//     />
+//   )
+// }
 
 export const MobileNavButton = React.forwardRef(
   (props: IconButtonProps, ref: React.Ref<any>) => {
